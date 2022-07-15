@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Drum : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float groundDamage = 40f;
+    public float areaDamage = 15f;
+    public float knockbackForce = 0.5f;
+
+    bool keyPressed = false;
+
+    private void Update()
     {
-        
+        if (Input.GetKeyDown("P")) keyPressed = true; 
+        else keyPressed = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Enemy Spotted");
+            GameObject enemy = collision.gameObject;
+            // if enemy isGrounded
+            enemy.GetComponent<Rigidbody2D>().AddForce(
+                ((GetComponent<Transform>().position.x - enemy.GetComponent<Transform>().position.x) > 0 ? Vector2.left : Vector2.right) * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }
