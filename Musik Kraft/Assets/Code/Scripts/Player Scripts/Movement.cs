@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     
     private bool jumpPressed;
     private bool isRunning;
+    public bool isFacingRight = true;
     
     // Start is called before the first frame update
     void Awake()
@@ -47,7 +48,7 @@ public class Movement : MonoBehaviour
     {
         
         Walk(dir);
-        if (jumpPressed && GetComponent<DetectGround>().onGround)
+        if (jumpPressed && GetComponent<DetectDirections>().onGround)
         {
             Jump();
             jumpPressed = false;
@@ -60,10 +61,15 @@ public class Movement : MonoBehaviour
     {
         
         rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
-        
         animator.SetBool("isRunning", isRunning);
-
-
+        if (dir.x > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (dir.x < 0 && isFacingRight)
+        {
+            Flip();
+        }
 
 
     }
@@ -71,6 +77,15 @@ public class Movement : MonoBehaviour
     public void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    void Flip()
+    {
+        Vector3 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
+
+        isFacingRight = !isFacingRight;
     }
 
     
