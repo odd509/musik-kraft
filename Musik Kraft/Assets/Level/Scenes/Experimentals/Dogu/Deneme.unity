@@ -461,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 130053716774914664, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 2041349167}
+      objectReference: {fileID: 2033268516}
     - target: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_Name
       value: Player
@@ -627,11 +627,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &2041349167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 302611953916714305, guid: ee40c7e8151afc44fb4e7b273c059cb8, type: 3}
-  m_PrefabInstance: {fileID: 5293903096181760259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5293903096181760259
 PrefabInstance:
   m_ObjectHideFlags: 0
