@@ -15,7 +15,10 @@ public class Movement : MonoBehaviour
     public float acceleration = 3.5f;
     public float decceleration = 13f;
     public float velPower = 1f;
-    
+    float lastGroundedTime;
+    float lastJumpTime; 
+    float jumpCoyoteTime = 0.2f;
+    float jumpBufferTime = 0.2f;
     
     private Vector2 dir;
     
@@ -49,18 +52,45 @@ public class Movement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump"))
         {
+            lastJumpTime = jumpBufferTime; //jump coyote timers
             jumpPressed = true;
         }
-       
+        else
+        { 
+            lastJumpTime -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            lastGroundedTime = 0f;
+        }
         
+        #region Timer
+        
+        if (isGrounded)
+        {
+            lastGroundedTime = jumpCoyoteTime;
+        }
+        else
+        {
+            lastGroundedTime -= Time.deltaTime;
+        }
+        
+        
+
+        #endregion
         
     }
 
     private void FixedUpdate()
     {
+        
+        
+        
+        
         Run(dir);
         
-        if (jumpPressed && isGrounded)
+        if (lastGroundedTime > 0 && lastJumpTime > 0)
         {
             Jump();
             jumpPressed = false;
@@ -87,11 +117,6 @@ public class Movement : MonoBehaviour
         
         #endregion
 
-
-
-        
-        
-
         #region Flip
 
         if (dir.x > 0 && !isFacingRight)
@@ -111,9 +136,11 @@ public class Movement : MonoBehaviour
     }
 
     public void Jump()
-    {   
+    {
         animator.SetTrigger("jump");
+        rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        lastJumpTime = 0f;
     }
 
     void Flip()
