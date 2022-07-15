@@ -145,9 +145,7 @@ public class Movement : MonoBehaviour
 
     void Flip()
     {
-        Vector3 currentScale = transform.localScale;
-        currentScale.x *= -1;
-        transform.localScale = currentScale;
+        transform.Rotate(0f, 180f, 0f);
 
         isFacingRight = !isFacingRight;
     }

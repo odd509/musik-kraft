@@ -41,16 +41,8 @@ public class DetectDirections : MonoBehaviour
         Gizmos.color = Color.red;
         
         Gizmos.DrawWireSphere((Vector2) transform.position + bottomOffset, collisionRadius);
-
-        if (isFacingRight)
-        {
-            Gizmos.DrawWireSphere((Vector2) transform.position + frontOffset, collisionRadius);
-        }
-        else
-        {
-            Gizmos.DrawWireSphere((Vector2) transform.position - frontOffset, collisionRadius);
-
-        }
         
+        Gizmos.DrawWireSphere((Vector2) transform.position + frontOffset, collisionRadius);
+
     }
 }
