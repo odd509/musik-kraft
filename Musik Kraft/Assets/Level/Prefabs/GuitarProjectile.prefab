@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 185695859700856065}
   - component: {fileID: 1561270338762816760}
   - component: {fileID: 8901489587550195987}
+  - component: {fileID: 5667321495148312568}
   m_Layer: 0
   m_Name: GuitarProjectile
   m_TagString: Untagged
@@ -54,7 +55,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &8901489587550195987
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -71,6 +72,22 @@ CircleCollider2D:
   m_Offset: {x: 0.0030255914, y: -0.0030255318}
   serializedVersion: 2
   m_Radius: 0.097611845
+--- !u!114 &5667321495148312568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302611953916714305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e4d121774e83942ad37bcec2320e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpeed: 3
+  targetSpeed: 23
+  speedAccel: 10
+  rb: {fileID: 1561270338762816760}
 --- !u!1 &7338247007244871931
 GameObject:
   m_ObjectHideFlags: 0

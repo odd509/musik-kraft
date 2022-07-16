@@ -5,16 +5,15 @@ using UnityEngine;
 public class GuitarProjectileMovement : MonoBehaviour
 {
 
-    public float speed = 4.5f;
+    public Vector2 velocityVector;
+    private Rigidbody2D rb;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = velocityVector;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

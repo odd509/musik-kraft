@@ -146,9 +146,10 @@ MonoBehaviour:
   speed: 10
   jumpForce: 16
   animator: {fileID: 0}
-  acceleration: 3.5
+  acceleration: 5
   decceleration: 13
   velPower: 1
+  playerHP: 1
   isFacingRight: 1
 --- !u!114 &1499053274311077833
 MonoBehaviour:
