@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     float lastJumpTime; 
     float jumpCoyoteTime = 0.2f;
     float jumpBufferTime = 0.2f;
-    
+    public float playerHP;
     private Vector2 dir;
     
     private bool jumpPressed;
@@ -37,6 +37,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(playerHP <= 0f){
+            Destroy(gameObject);
+        }
+        
         float x = Input.GetAxisRaw("Horizontal");
         isRunning = Input.GetButton("Horizontal");
 
