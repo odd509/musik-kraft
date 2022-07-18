@@ -16,7 +16,7 @@ public class Shoot1 : MonoBehaviour
     void Start()
     {
         radius = 5f;
-        movespeed = 5f;
+        movespeed = 15f;
     }
 
     // Update is called once per frame
@@ -45,4 +45,5 @@ public class Shoot1 : MonoBehaviour
             angle += angleStep;
         }
     }
+    
 }

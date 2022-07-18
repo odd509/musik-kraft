@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1561270338762816760}
   - component: {fileID: 8901489587550195987}
   - component: {fileID: 5667321495148312568}
+  - component: {fileID: 3649500879641296634}
   m_Layer: 0
   m_Name: GuitarProjectile
   m_TagString: Untagged
@@ -84,10 +85,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e4d121774e83942ad37bcec2320e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 3
-  targetSpeed: 23
-  speedAccel: 10
-  rb: {fileID: 1561270338762816760}
+  velocityVector: {x: 0, y: 0}
+--- !u!114 &3649500879641296634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302611953916714305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d807f7c26a3e03e46ba4c33c702cdc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 3
+  damage: 20
 --- !u!1 &7338247007244871931
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class GuitarWeapon : MonoBehaviour
     void Shoot()
     {
         Vector2 projectileVector;
-        var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity);
+        var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 
 
         if (Input.GetKey(KeyCode.UpArrow) && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
