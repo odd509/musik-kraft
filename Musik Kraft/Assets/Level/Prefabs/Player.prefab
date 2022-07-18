@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2996752911476509864}
   - component: {fileID: 130053716774914664}
   - component: {fileID: 6110338230519639370}
+  - component: {fileID: 1574332960553738690}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -250,6 +251,18 @@ MonoBehaviour:
   firePointFront: {fileID: 1609037789478685399}
   bullet: {fileID: 992025472062646778, guid: d513c4b2ac8a9484288360d37e975190, type: 3}
   projectileSpeed: 20
+--- !u!114 &1574332960553738690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499053274311077843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7cee1b95cadac64abfd3ca0dd3e4b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499053274459042178
 GameObject:
   m_ObjectHideFlags: 0

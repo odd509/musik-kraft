@@ -9,17 +9,20 @@ public class Movement : MonoBehaviour
 {
 
     private Rigidbody2D rb;
+    public Animator animator;
+    public PlayerStats stats;
+
+    [Header("Physics")]
     public float speed = 10f;
     public float jumpForce = 12f;
-    public Animator animator;
     public float acceleration = 3.5f;
     public float decceleration = 13f;
     public float velPower = 1f;
+
     float lastGroundedTime;
     float lastJumpTime; 
     float jumpCoyoteTime = 0.2f;
     float jumpBufferTime = 0.2f;
-    public float playerHP;
     private Vector2 dir;
     
     private bool jumpPressed;
@@ -32,12 +35,13 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        stats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerHP <= 0f){
+        if(stats.getHP() <= 0f){
             Destroy(gameObject);
         }
         

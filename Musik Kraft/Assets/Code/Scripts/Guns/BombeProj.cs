@@ -25,14 +25,14 @@ public class BombeProj : MonoBehaviour
                     Vector2 difference = (enemy.transform.position - transform.position).normalized;
                     difference = difference.normalized * thrust;
                     enemy.AddForce(difference, ForceMode2D.Impulse);
-                    kill.health -= (damagePercent * damage);
+                    kill.TakeDamage(damagePercent * damage);
                 }
             }
         }
         else{
             var enemy = collusion.GetComponent<EnemyStats>();
             if(enemy){
-                enemy.health -= damage;
+                enemy.TakeDamage(damage);
             }
         }
     }
