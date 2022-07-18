@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &452864626 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1609037789478685399, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+  m_PrefabInstance: {fileID: 1695632318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596035837
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +323,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1479193628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+  m_PrefabInstance: {fileID: 1695632318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1479193639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479193628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6dc4bb4f1a875244b3e39b5157f71f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePointFront: {fileID: 452864626}
+  bullet: {fileID: 992025472062646778, guid: d513c4b2ac8a9484288360d37e975190, type: 3}
+  projectileSpeed: 20
 --- !u!1001 &1695632318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +350,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 130053716774914664, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 302611953916714305, guid: ee40c7e8151afc44fb4e7b273c059cb8, type: 3}
     - target: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_Name
       value: Player
@@ -380,6 +409,10 @@ PrefabInstance:
     - target: {fileID: 1499053274311077847, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996752911476509864, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: numberOfProjectiles
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1499053274311077845, guid: 332839c1c79089f4a9321b749983d877, type: 3}
