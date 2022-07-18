@@ -7,7 +7,7 @@ using UnityEngine;
 public class DetectDirections : MonoBehaviour
 {
 
-    public LayerMask groundLayer;
+    [SerializeField] public LayerMask groundLayer;
     public bool onGround;
     private bool isFacingRight;
     

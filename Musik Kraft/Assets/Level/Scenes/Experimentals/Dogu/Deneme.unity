@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 596035840}
   - component: {fileID: 596035839}
   - component: {fileID: 596035838}
+  - component: {fileID: 596035841}
   m_Layer: 6
   m_Name: Square
   m_TagString: Platform
@@ -234,6 +235,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &596035841
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596035837}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &1095241823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,6 +310,10 @@ PrefabInstance:
     - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_Name
       value: frog-idle-1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
@@ -496,6 +522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: frog-idle-1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
 --- !u!1 &1994309317
@@ -509,6 +539,7 @@ GameObject:
   - component: {fileID: 1994309320}
   - component: {fileID: 1994309319}
   - component: {fileID: 1994309318}
+  - component: {fileID: 1994309321}
   m_Layer: 6
   m_Name: Square (1)
   m_TagString: Platform
@@ -609,6 +640,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -77.454}
+--- !u!50 &1994309321
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994309317}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &3943555339036574269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -622,11 +674,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760016, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.53
+      value: -5.15
       objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760016, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.12
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760016, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_LocalPosition.z
@@ -663,6 +715,10 @@ PrefabInstance:
     - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_Name
       value: frog-idle-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
