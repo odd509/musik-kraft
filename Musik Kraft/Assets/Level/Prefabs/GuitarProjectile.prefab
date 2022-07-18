@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8901489587550195987}
   - component: {fileID: 5667321495148312568}
   - component: {fileID: 3649500879641296634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GuitarProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
