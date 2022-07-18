@@ -22,9 +22,11 @@ public class Drum : MonoBehaviour
         {
             Debug.Log("Enemy Spotted");
             GameObject enemy = collision.gameObject;
-            // if enemy isGrounded
+
+            // enemy.Damage(enemy.GetComponent<IsGrounded>().Check() ? groundDamage : areaDamage);
             enemy.GetComponent<Rigidbody2D>().AddForce(
                 ((GetComponent<Transform>().position.x - enemy.GetComponent<Transform>().position.x) > 0 ? Vector2.left : Vector2.right) * knockbackForce, ForceMode2D.Impulse);
+            
         }
     }
 }
