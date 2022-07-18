@@ -619,6 +619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuitarProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7338247007244871931, guid: ee40c7e8151afc44fb4e7b273c059cb8, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee40c7e8151afc44fb4e7b273c059cb8, type: 3}
 --- !u!1001 &5805953996051185240

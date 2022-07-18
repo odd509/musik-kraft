@@ -34,6 +34,8 @@ public class GuitarWeapon : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log(bullet);
+
         Vector2 projectileVector;
         var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 
 
