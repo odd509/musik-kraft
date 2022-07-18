@@ -12,13 +12,18 @@ public class Drum : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("P")) keyPressed = true; 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            keyPressed = true;
+               Debug.Log("p");
+        } 
         else keyPressed = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        Debug.Log("collision");
+        if (collision.gameObject.tag == "Enemy" && keyPressed == true)
         {
             Debug.Log("Enemy Spotted");
             GameObject enemy = collision.gameObject;

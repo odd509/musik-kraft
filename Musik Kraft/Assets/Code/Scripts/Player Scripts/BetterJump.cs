@@ -20,7 +20,6 @@ public class BetterJump : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             rb.gravityScale = fallMultiplier;
-            Debug.Log("zort");
         }
         else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
 
