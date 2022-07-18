@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 797389117185455568}
   - component: {fileID: 2280732058475064496}
   - component: {fileID: 5475281636327430687}
-  - component: {fileID: 2175727832711101836}
   - component: {fileID: 6584397005873792974}
   - component: {fileID: 6528349903555273028}
+  - component: {fileID: 7493313505396353256}
   m_Layer: 8
   m_Name: Bombe
   m_TagString: Untagged
@@ -109,20 +109,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2175727832711101836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992025472062646778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d807f7c26a3e03e46ba4c33c702cdc20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 1
-  damage: 20
 --- !u!114 &6584397005873792974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +153,18 @@ PolygonCollider2D:
       - {x: 0.25, y: -0.43359375}
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
+--- !u!114 &7493313505396353256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992025472062646778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ece74e3f1ec1bb4bad9be881c0fab47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  thrust: 1
+  splashRange: 1.5
