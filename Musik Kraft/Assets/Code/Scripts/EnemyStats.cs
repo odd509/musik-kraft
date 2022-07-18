@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public float damage, health;
+    public float damage;
+    public float maxHealth;
     
-    // Update is called once per frame
-    void Update()
-    {
-        if (health <= 0f){
-            Destroy(gameObject);
-        }
-    }
+    float health;
+    
     void OnTriggerEnter2D(Collider2D collider){
         if (collider.gameObject.tag == "Player"){
             Movement player = collider.GetComponent<Movement>();
@@ -20,4 +16,14 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
+    void TakeDamage(float damage) {
+        health -= damage;
+        if (health <= 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void Heal(float heal) {
+        health = Mathf.Min(maxHealth, (heal + health));
+    }
 }
