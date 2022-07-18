@@ -19,7 +19,7 @@ public class BetterJump : MonoBehaviour
     {
         if (rb.velocity.y < 0)
         {
-            rb.gravityScale = fallMultiplier;
+            rb.gravityScale = Input.GetKey(KeyCode.DownArrow) ? fallMultiplier * 1.3f : fallMultiplier;
         }
         else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
 
