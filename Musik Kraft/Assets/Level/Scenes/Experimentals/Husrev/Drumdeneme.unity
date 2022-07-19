@@ -245,9 +245,17 @@ PrefabInstance:
       value: -0.067
       objectReference: {fileID: 0}
     - target: {fileID: 98397653, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: radius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 98397653, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: damageSprite
       value: 
       objectReference: {fileID: 2020328257}
+    - target: {fileID: 98397653, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: knockbackForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_Name
       value: Player
@@ -295,6 +303,14 @@ PrefabInstance:
     - target: {fileID: 1499053274311077847, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835336298801148185, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661575938789257064, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7624088905518861073, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_AnchorMax.y
