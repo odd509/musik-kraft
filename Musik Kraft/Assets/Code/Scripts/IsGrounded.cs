@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class IsGrounded : MonoBehaviour
 {
-    public Transform groundCheck;
-    public LayerMask ground;
-    public float checkRadius;
+    
+    
+    [SerializeField] public LayerMask groundLayer;
+    public bool onGround;
+    
+    [Header("Collision")]
+    public float collisionRadius = .25f;
+    public Vector2 bottomOffset;
 
-    public bool Check()
+    void Update()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, checkRadius, ground);
+        onGround = Physics2D.OverlapCircle((Vector2) transform.position + bottomOffset, collisionRadius, groundLayer);
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere((Vector2) transform.position + bottomOffset, collisionRadius);
     }
 }

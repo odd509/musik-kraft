@@ -186,7 +186,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: frog-idle-1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2985168129881103686, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
 --- !u!1 &467811767
 GameObject:
@@ -1069,3 +1070,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1917292018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+  m_PrefabInstance: {fileID: 435888915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1917292025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917292018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2290c64293f60a94983d55288aa0d5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  onGround: 0
+  collisionRadius: 0.25
+  bottomOffset: {x: 0, y: -0.58}
