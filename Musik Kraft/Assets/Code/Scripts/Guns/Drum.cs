@@ -16,18 +16,21 @@ public class Drum : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius, LayerMask.NameToLayer("Enemy"));
+            Debug.Log(results[0].gameObject.name);
             foreach (Collider2D collider in results) {
-                Debug.Log("Enemy Spotted");
-                GameObject enemy = collider.gameObject;
+                if (collider.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("Enemy");
+                    GameObject enemy = collider.gameObject;
 
-                enemy.GetComponent<EnemyStats>().TakeDamage(enemy.GetComponent<DetectDirections>().onGround ? groundDamage : areaDamage);
+                    enemy.GetComponent<EnemyStats>().TakeDamage(groundDamage);
 
 
-                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-                Vector2 difference = (rb.transform.position - transform.position).normalized;
-                difference = difference.normalized * knockbackForce;
-                rb.AddForce(difference, ForceMode2D.Impulse);
-
+                    Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+                    Vector2 difference = (rb.transform.position - transform.position).normalized;
+                    difference = difference.normalized * knockbackForce;
+                    rb.AddForce(difference, ForceMode2D.Impulse);
+                }
             }
         }
     }
