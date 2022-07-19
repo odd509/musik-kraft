@@ -25,7 +25,6 @@ public class EnemyStats : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         if (collider.gameObject.tag == "Player"){
             collider.GetComponent<PlayerStats>().TakeDamage(damage);
-
             Rigidbody2D playerRigid = collider.GetComponent<Rigidbody2D>();
             Vector2 difference = (playerRigid.transform.position - transform.position).normalized;
             difference = difference.normalized * knockbackForce;
