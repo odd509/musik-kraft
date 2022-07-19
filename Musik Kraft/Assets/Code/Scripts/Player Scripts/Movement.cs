@@ -114,7 +114,7 @@ public class Movement : MonoBehaviour
         {
             Physics2D.IgnoreLayerCollision(3,9,true);
             Dash();
-            Physics2D.IgnoreLayerCollision(3,9,false);
+            
         }
 
         FallDetection();
