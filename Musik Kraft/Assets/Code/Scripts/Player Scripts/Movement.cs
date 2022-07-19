@@ -18,17 +18,25 @@ public class Movement : MonoBehaviour
     public float acceleration = 3.5f;
     public float decceleration = 13f;
     public float velPower = 1f;
-
+    public float dashSpeed;
+    public float startDashTime;
+    public float fallMultiplier = 7f;
+    public float lowJumpMultiplier = 5f;
+    
+    
     float lastGroundedTime;
     float lastJumpTime; 
     float jumpCoyoteTime = 0.2f;
     float jumpBufferTime = 0.2f;
+    private float dashTime;
+    
     private Vector2 dir;
     
     private bool jumpPressed;
     private bool isRunning;
     private bool isGrounded;
     public bool isFacingRight = true;
+    private bool canDash;
     
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +44,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         stats = GetComponent<PlayerStats>();
+        dashTime = startDashTime;
     }
 
     // Update is called once per frame
@@ -79,11 +88,20 @@ public class Movement : MonoBehaviour
         {
             lastGroundedTime -= Time.deltaTime;
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.C) && dashTime < 0f)
+        {
+            canDash = true;
+        }
+        else
+        {
+            dashTime -= Time.deltaTime;
+        }
+
         
 
         #endregion
-        
+
     }
 
     private void FixedUpdate()
@@ -95,7 +113,13 @@ public class Movement : MonoBehaviour
             Jump();
             jumpPressed = false;
         }
+
+        if (canDash)
+        {
+            Dash();
+        }
         
+
         FallDetection();
         
     }
@@ -155,12 +179,39 @@ public class Movement : MonoBehaviour
         if (rb.velocity.y < 0 )
         {
             animator.SetBool("isFalling", true);
+            rb.gravityScale = Input.GetKey(KeyCode.DownArrow) ? fallMultiplier * 1.3f : fallMultiplier;
+
         }
         else
         {
             animator.SetBool("isFalling", false);
+            
+            if (!Input.GetButton("Jump"))
+            {
+                rb.gravityScale = lowJumpMultiplier;
+            }
+            else
+            {
+                rb.gravityScale = 2f;
+            }
+            
         }
     }
 
-    
+    void Dash()
+    {
+        rb.AddForce(dir * dashSpeed, ForceMode2D.Impulse);
+        StartCoroutine(invincibleTime());
+        dashTime = startDashTime;
+        canDash = false;
+
+    }
+    IEnumerator invincibleTime(){
+        Physics2D.IgnoreLayerCollision(3,9,true);
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(3,9,false);
+        
+    }
+
+
 }

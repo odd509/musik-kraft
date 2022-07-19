@@ -12,16 +12,19 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
 
+    [Header("HealthBar")]
+    public HealthBarBehavior healthBar;
 
     private void Awake()
     {
         health = maxHealth;
-
+        healthBar.setHealth(health,maxHealth);
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
     public void TakeDamage(float damage)
     {
+        healthBar.setHealth(health,maxHealth);
         health -= damage;
         StartCoroutine(Invulnerability());
         if (health <= 0f)
