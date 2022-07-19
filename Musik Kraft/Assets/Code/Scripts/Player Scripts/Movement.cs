@@ -113,14 +113,9 @@ public class Movement : MonoBehaviour
 
         if (canDash)
         {
-            Physics2D.IgnoreLayerCollision(3,9,true);
             Dash();
-            
         }
-        if (startDashTime - dashTime > 0.5) ;
-        {
-            Physics2D.IgnoreLayerCollision(3,9,false);
-        }
+        
 
         FallDetection();
         
@@ -191,9 +186,16 @@ public class Movement : MonoBehaviour
     void Dash()
     {
         rb.AddForce(dir * dashSpeed, ForceMode2D.Impulse);
+        StartCoroutine(invincibleTime());
         dashTime = startDashTime;
         canDash = false;
 
+    }
+    IEnumerator invincibleTime(){
+        Physics2D.IgnoreLayerCollision(3,9,true);
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(3,9,false);
+        
     }
 
 
