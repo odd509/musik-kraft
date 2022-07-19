@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Drum : MonoBehaviour
 {
+    public GameObject damageSprite;
+
+    public float effectDuration = 0.2f;
     public float groundDamage = 40f;
     public float areaDamage = 15f;
     public float knockbackForce = 2f;
@@ -23,10 +26,16 @@ public class Drum : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+<<<<<<< HEAD
             camera.GetComponent<Shake>().ShakeCamera();
+=======
+            StartCoroutine(DamageEffect());
+
+>>>>>>> adfd59408e9ef5a9c9286ce96bda44d97882f9fc
             Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius);
             Debug.Log(results[0].gameObject.name);
-            foreach (Collider2D collider in results) {
+            foreach (Collider2D collider in results)
+            {
                 if (collider.gameObject.tag == "Enemy")
                 {
                     Debug.Log("Enemy");
@@ -47,5 +56,12 @@ public class Drum : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(GetComponent<Transform>().position, radius);
+    }
+
+    private IEnumerator DamageEffect()
+    {
+        damageSprite.SetActive(true);
+        yield return new WaitForSeconds(effectDuration);
+        damageSprite.SetActive(false);
     }
 }
