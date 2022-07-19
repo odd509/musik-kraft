@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1156735831}
+    - target: {fileID: 98397653, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: damageSprite
+      value: 
+      objectReference: {fileID: 1774184499}
     - target: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1358,6 +1362,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1774184499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4835336298801148185, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+  m_PrefabInstance: {fileID: 754851905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1895937078
 GameObject:
   m_ObjectHideFlags: 0
