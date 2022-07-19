@@ -145,13 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615e1bdb9db168d46b613f6c77f0855e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  stats: {fileID: 0}
   speed: 10
   jumpForce: 16
-  animator: {fileID: 0}
   acceleration: 5
-  decceleration: 13
+  decceleration: 20
   velPower: 1
-  playerHP: 1
+  dashSpeed: 20
+  startDashTime: 2
   isFacingRight: 1
 --- !u!114 &1499053274311077833
 MonoBehaviour:
@@ -263,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cee1b95cadac64abfd3ca0dd3e4b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1499053274459042178
 GameObject:
   m_ObjectHideFlags: 0
