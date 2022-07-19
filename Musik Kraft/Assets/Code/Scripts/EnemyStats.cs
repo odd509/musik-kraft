@@ -5,23 +5,36 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public float damage;
+    public float knockbackForce;
     public float maxHealth = 100;
     
-    float health;
+    private float health;
+
+    [Header("HealthBar")]
+    public HealthBarBehavior healthBar;
+
+    
 
     private void Awake()
     {
         health = maxHealth;
+        healthBar.setHealth(health,maxHealth);
     }
+    
 
     void OnTriggerEnter2D(Collider2D collider){
         if (collider.gameObject.tag == "Player"){
-            Movement player = collider.GetComponent<Movement>();
-            player.stats.TakeDamage(damage);
+            collider.GetComponent<PlayerStats>().TakeDamage(damage);
+
+            Rigidbody2D playerRigid = collider.GetComponent<Rigidbody2D>();
+            Vector2 difference = (playerRigid.transform.position - transform.position).normalized;
+            difference = difference.normalized * knockbackForce;
+            playerRigid.AddForce(difference,ForceMode2D.Impulse);
         }
     }
 
     public void TakeDamage(float damage) {
+        healthBar.setHealth(health,maxHealth);
         health -= damage;
         if (health <= 0f)
         {
@@ -32,4 +45,6 @@ public class EnemyStats : MonoBehaviour
         health = Mathf.Min(maxHealth, (heal + health));
     }
     public float getHP() { return health; }
+    
+    
 }
