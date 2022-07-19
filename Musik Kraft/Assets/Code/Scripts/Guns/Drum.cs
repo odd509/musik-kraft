@@ -15,7 +15,7 @@ public class Drum : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius, LayerMask.NameToLayer("Enemy"));
+            Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius);
             Debug.Log(results[0].gameObject.name);
             foreach (Collider2D collider in results) {
                 if (collider.gameObject.tag == "Enemy")
