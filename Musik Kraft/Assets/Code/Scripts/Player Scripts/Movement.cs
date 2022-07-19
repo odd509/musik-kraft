@@ -20,6 +20,9 @@ public class Movement : MonoBehaviour
     public float velPower = 1f;
     public float dashSpeed;
     public float startDashTime;
+    public float fallMultiplier = 7f;
+    public float lowJumpMultiplier = 5f;
+    
     
     float lastGroundedTime;
     float lastJumpTime; 
@@ -176,10 +179,22 @@ public class Movement : MonoBehaviour
         if (rb.velocity.y < 0 )
         {
             animator.SetBool("isFalling", true);
+            rb.gravityScale = Input.GetKey(KeyCode.DownArrow) ? fallMultiplier * 1.3f : fallMultiplier;
+
         }
         else
         {
             animator.SetBool("isFalling", false);
+            
+            if (!Input.GetButton("Jump"))
+            {
+                rb.gravityScale = lowJumpMultiplier;
+            }
+            else
+            {
+                rb.gravityScale = 2f;
+            }
+            
         }
     }
 
