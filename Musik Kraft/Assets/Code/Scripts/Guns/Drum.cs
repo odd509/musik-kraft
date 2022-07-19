@@ -20,7 +20,7 @@ public class Drum : MonoBehaviour
                 Debug.Log("Enemy Spotted");
                 GameObject enemy = collider.gameObject;
 
-                enemy.GetComponent<EnemyStats>().TakeDamage(enemy.GetComponent<IsGrounded>().Check() ? groundDamage : areaDamage);
+                enemy.GetComponent<EnemyStats>().TakeDamage(enemy.GetComponent<DetectDirections>().onGround ? groundDamage : areaDamage);
 
 
                 Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
