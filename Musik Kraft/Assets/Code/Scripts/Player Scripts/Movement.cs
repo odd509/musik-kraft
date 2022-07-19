@@ -95,6 +95,7 @@ public class Movement : MonoBehaviour
             dashTime -= Time.deltaTime;
         }
 
+        
 
         #endregion
 
@@ -115,6 +116,10 @@ public class Movement : MonoBehaviour
             Physics2D.IgnoreLayerCollision(3,9,true);
             Dash();
             
+        }
+        if (startDashTime - dashTime > 0.5) ;
+        {
+            Physics2D.IgnoreLayerCollision(3,9,false);
         }
 
         FallDetection();
