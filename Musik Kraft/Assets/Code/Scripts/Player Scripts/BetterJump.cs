@@ -25,7 +25,6 @@ public class BetterJump : MonoBehaviour
 
         {
             rb.gravityScale = lowJumpMultiplier;
-            Debug.Log(Input.GetButton("Jump"));
         }
         else
         {

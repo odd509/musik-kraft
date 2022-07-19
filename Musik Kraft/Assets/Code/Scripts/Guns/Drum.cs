@@ -6,7 +6,8 @@ public class Drum : MonoBehaviour
 {
     public float groundDamage = 40f;
     public float areaDamage = 15f;
-    public float knockbackForce = 0.5f;
+    public float knockbackForce = 2f;
+    public float radius = 10f;
 
     bool keyPressed = false;
 
@@ -14,24 +15,25 @@ public class Drum : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            keyPressed = true;
-               Debug.Log("p");
-        } 
-        else keyPressed = false;
+            Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius, LayerMask.NameToLayer("Enemy"));
+            foreach (Collider2D collider in results) {
+                Debug.Log("Enemy Spotted");
+                GameObject enemy = collider.gameObject;
+
+                enemy.GetComponent<EnemyStats>().TakeDamage(enemy.GetComponent<IsGrounded>().Check() ? groundDamage : areaDamage);
+
+
+                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+                Vector2 difference = (rb.transform.position - transform.position).normalized;
+                difference = difference.normalized * knockbackForce;
+                rb.AddForce(difference, ForceMode2D.Impulse);
+
+            }
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnDrawGizmosSelected()
     {
-        Debug.Log("collision");
-        if (collision.gameObject.tag == "Enemy" && keyPressed == true)
-        {
-            Debug.Log("Enemy Spotted");
-            GameObject enemy = collision.gameObject;
-
-            // enemy.Damage(enemy.GetComponent<IsGrounded>().Check() ? groundDamage : areaDamage);
-            enemy.GetComponent<Rigidbody2D>().AddForce(
-                ((GetComponent<Transform>().position.x - enemy.GetComponent<Transform>().position.x) > 0 ? Vector2.left : Vector2.right) * knockbackForce, ForceMode2D.Impulse);
-            
-        }
+        Gizmos.DrawWireSphere(GetComponent<Transform>().position, radius);
     }
 }

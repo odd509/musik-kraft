@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3943555338606760022}
   - component: {fileID: 3943555338606760023}
   - component: {fileID: 3943555338606760019}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frog-idle-1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,4 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  health: 100
+  knockbackForce: 0
+  maxHealth: 100
