@@ -40,11 +40,7 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(stats.getHP() <= 0f){
-            Destroy(gameObject);
-        }
-        
+    {   
         float x = Input.GetAxisRaw("Horizontal");
         isRunning = Input.GetButton("Horizontal");
 
@@ -91,11 +87,7 @@ public class Movement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        
-        
-        
-        
+    {   
         Run(dir);
         
         if (lastGroundedTime > 0 && lastJumpTime > 0)

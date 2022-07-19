@@ -7,7 +7,8 @@ public class EnemyStats : MonoBehaviour
     public float damage;
     public float knockbackForce;
     public float maxHealth = 100;
-    public float health;
+    
+    private float health;
 
     [Header("HealthBar")]
     public HealthBarBehavior healthBar;
@@ -23,9 +24,9 @@ public class EnemyStats : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider){
         if (collider.gameObject.tag == "Player"){
-            Movement player = collider.GetComponent<Movement>();
+            collider.GetComponent<PlayerStats>().TakeDamage(damage);
+
             Rigidbody2D playerRigid = collider.GetComponent<Rigidbody2D>();
-            player.stats.TakeDamage(damage);
             Vector2 difference = (playerRigid.transform.position - transform.position).normalized;
             difference = difference.normalized * knockbackForce;
             playerRigid.AddForce(difference,ForceMode2D.Impulse);

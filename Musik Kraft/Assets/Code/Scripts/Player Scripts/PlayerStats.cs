@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         health = maxHealth;
+
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
