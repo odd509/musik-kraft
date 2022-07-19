@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,20 @@ public class Drum : MonoBehaviour
     public float knockbackForce = 2f;
     public float radius = 10f;
 
+    private GameObject camera;
+
     bool keyPressed = false;
+
+    private void Start()
+    {
+        camera = GameObject.FindWithTag("MainCamera");
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            camera.GetComponent<Shake>().ShakeCamera();
             Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius);
             Debug.Log(results[0].gameObject.name);
             foreach (Collider2D collider in results) {
