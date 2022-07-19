@@ -18,17 +18,22 @@ public class Movement : MonoBehaviour
     public float acceleration = 3.5f;
     public float decceleration = 13f;
     public float velPower = 1f;
-
+    public float dashSpeed;
+    public float startDashTime;
+    
     float lastGroundedTime;
     float lastJumpTime; 
     float jumpCoyoteTime = 0.2f;
     float jumpBufferTime = 0.2f;
+    private float dashTime;
+    
     private Vector2 dir;
     
     private bool jumpPressed;
     private bool isRunning;
     private bool isGrounded;
     public bool isFacingRight = true;
+    private bool canDash;
     
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +41,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         stats = GetComponent<PlayerStats>();
+        dashTime = startDashTime;
     }
 
     // Update is called once per frame
@@ -83,11 +89,19 @@ public class Movement : MonoBehaviour
         {
             lastGroundedTime -= Time.deltaTime;
         }
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.C) && dashTime < 0f)
+        {
+            canDash = true;
+        }
+        else
+        {
+            dashTime -= Time.deltaTime;
+        }
+
 
         #endregion
-        
+
     }
 
     private void FixedUpdate()
@@ -103,7 +117,14 @@ public class Movement : MonoBehaviour
             Jump();
             jumpPressed = false;
         }
-        
+
+        if (canDash)
+        {
+            Physics2D.IgnoreLayerCollision(3,9,true);
+            Dash();
+            Physics2D.IgnoreLayerCollision(3,9,false);
+        }
+
         FallDetection();
         
     }
@@ -170,5 +191,13 @@ public class Movement : MonoBehaviour
         }
     }
 
-    
+    void Dash()
+    {
+        rb.AddForce(dir * dashSpeed, ForceMode2D.Impulse);
+        dashTime = startDashTime;
+        canDash = false;
+
+    }
+
+
 }
