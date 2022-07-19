@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1499053274311077845, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -463,6 +467,14 @@ PrefabInstance:
     - target: {fileID: 1499053274311077847, guid: 332839c1c79089f4a9321b749983d877, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574332960553738690, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: numberOfFlashes
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574332960553738690, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+      propertyPath: invulnerabilityDuration
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1499053274311077845, guid: 332839c1c79089f4a9321b749983d877, type: 3}
@@ -528,6 +540,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+--- !u!1 &1831984652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+  m_PrefabInstance: {fileID: 3943555339036574269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1831984658
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831984652}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.35, y: 0.32}
+    newSize: {x: 0.35, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.23}
+  m_EdgeRadius: 0
 --- !u!1 &1994309317
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,13 +755,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3943555338606760019, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943555338606760019, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: knockbackForce
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_Name
       value: frog-idle-1
       objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}

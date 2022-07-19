@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public float damage;
+    public float knockbackForce;
     public float maxHealth = 100;
     
-    float health;
+    public float health;
 
     private void Awake()
     {
@@ -17,7 +18,11 @@ public class EnemyStats : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         if (collider.gameObject.tag == "Player"){
             Movement player = collider.GetComponent<Movement>();
+            Rigidbody2D playerRigid = collider.GetComponent<Rigidbody2D>();
             player.stats.TakeDamage(damage);
+            Vector2 difference = (playerRigid.transform.position - transform.position).normalized;
+            difference = difference.normalized * knockbackForce;
+            playerRigid.AddForce(difference,ForceMode2D.Impulse);
         }
     }
 
