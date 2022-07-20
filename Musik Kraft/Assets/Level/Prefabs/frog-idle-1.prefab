@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 59104406}
   - component: {fileID: 59104404}
   - component: {fileID: 59104405}
+  - component: {fileID: 5504691335381425620}
   m_Layer: 9
   m_Name: frog-idle-1
   m_TagString: Enemy
@@ -497,6 +498,22 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!58 &5504691335381425620
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943555338606760020}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.004, y: -0.01}
+  serializedVersion: 2
+  m_Radius: 0.098
 --- !u!1 &5057771133379180739
 GameObject:
   m_ObjectHideFlags: 0
