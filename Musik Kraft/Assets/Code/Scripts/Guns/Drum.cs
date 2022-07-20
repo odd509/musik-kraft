@@ -16,6 +16,8 @@ public class Drum : MonoBehaviour
     private GameObject camera;
 
     bool keyPressed = false;
+    bool canShoot = true;
+    public float cooldown;
 
     private void Start()
     {
@@ -24,11 +26,13 @@ public class Drum : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.R) && canShoot)
         {
             camera.GetComponent<Shake>().ShakeCamera();
 
             StartCoroutine(DamageEffect());
+            canShoot = false;
+            StartCoroutine(shootTimer());
 
             Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius);
             Debug.Log(results[0].gameObject.name);
@@ -61,5 +65,9 @@ public class Drum : MonoBehaviour
         damageSprite.SetActive(true);
         yield return new WaitForSeconds(effectDuration);
         damageSprite.SetActive(false);
+    }
+    IEnumerator shootTimer(){
+        yield return new WaitForSeconds(cooldown);
+        canShoot = true;
     }
 }

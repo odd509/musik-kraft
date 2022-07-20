@@ -10,25 +10,21 @@ public class GuitarWeapon : MonoBehaviour
     public Transform firePointFront;
     public GameObject bullet;
     public float projectileSpeed = 20f;
-    
+    private bool canShoot = true;
+    public float cooldown;
 
     private void Awake()
     {
         firePointFront = transform.Find("FirePointFront");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && canShoot)
         {
             Shoot();
+            canShoot= false;
+            StartCoroutine(shootTimer());
         }
     }
 
@@ -36,6 +32,8 @@ public class GuitarWeapon : MonoBehaviour
     {
         Vector2 projectileVector;
         var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 
+        
+        
 
         if (Input.GetKey(KeyCode.UpArrow) && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
         {
@@ -59,5 +57,9 @@ public class GuitarWeapon : MonoBehaviour
         
         proj.GetComponent<GuitarProjectileMovement>().velocityVector = projectileVector * projectileSpeed;
 
+    }
+    IEnumerator shootTimer(){
+        yield return new WaitForSeconds(cooldown);
+        canShoot = true;
     }
 }

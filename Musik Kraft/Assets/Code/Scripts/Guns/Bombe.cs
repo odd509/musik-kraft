@@ -10,6 +10,8 @@ public class Bombe : MonoBehaviour
     public Transform firePointFront;
     public GameObject bullet;
     public float projectileSpeed = 20f;
+    private bool canShoot = true;
+    public float cooldown;
     
 
     private void Awake()
@@ -19,9 +21,11 @@ public class Bombe : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canShoot)
         {
             Shoot();
+            canShoot = false;
+            StartCoroutine(shootTimer());
         }
     }
 
@@ -49,4 +53,9 @@ public class Bombe : MonoBehaviour
         proj.GetComponent<GuitarProjectileMovement>().velocityVector = projectileVector * projectileSpeed;
 
     }
+    IEnumerator shootTimer(){
+        yield return new WaitForSeconds(cooldown);
+        canShoot = true;
+    }
+    
 }

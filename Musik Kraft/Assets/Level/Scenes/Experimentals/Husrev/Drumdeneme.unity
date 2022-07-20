@@ -186,10 +186,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: frog-idle-1
       objectReference: {fileID: 0}
-    - target: {fileID: 3943555338606760023, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: m_Constraints
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4213333394509098992, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -11,6 +11,8 @@ public class Shoot1 : MonoBehaviour
     private Vector2 startPoint;
     public GameObject player;
     private float radius, movespeed;
+    private bool canShoot = true;
+    public float cooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,11 @@ public class Shoot1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if(Input.GetKeyDown(KeyCode.Q) && canShoot){
+            canShoot = false;
             startPoint = player.transform.position;
             SpawnProjectiles (numberOfProjectiles);
+            StartCoroutine(shootTimer());
         }
     }
     void SpawnProjectiles (int numberOfProjectiles){
@@ -44,6 +48,10 @@ public class Shoot1 : MonoBehaviour
 
             angle += angleStep;
         }
+    }
+    IEnumerator shootTimer(){
+        yield return new WaitForSeconds(cooldown);
+        canShoot = true;
     }
     
 }
