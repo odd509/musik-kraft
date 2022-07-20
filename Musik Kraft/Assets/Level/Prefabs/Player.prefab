@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84abd4c59459b4e4eb50fa65adff074c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageSprite: {fileID: 0}
+  damageSprite: {fileID: 4835336298801148185}
   effectDuration: 0.2
   groundDamage: 40
   areaDamage: 15
