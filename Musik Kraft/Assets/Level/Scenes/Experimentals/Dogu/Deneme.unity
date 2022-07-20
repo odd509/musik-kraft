@@ -660,6 +660,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+--- !u!1 &1785379758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
+  m_PrefabInstance: {fileID: 1695632318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1785379759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785379758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c87fa6e32e3e154e957504def5a0ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drum: {fileID: 0}
+  guitar: {fileID: 0}
+  shoot1: {fileID: 0}
+  bombe: {fileID: 0}
+  coolDownArray: 
 --- !u!1001 &1845745597
 PrefabInstance:
   m_ObjectHideFlags: 0
