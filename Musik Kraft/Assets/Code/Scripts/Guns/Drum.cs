@@ -26,12 +26,11 @@ public class Drum : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-<<<<<<< HEAD
+
             camera.GetComponent<Shake>().ShakeCamera();
-=======
+
             StartCoroutine(DamageEffect());
 
->>>>>>> adfd59408e9ef5a9c9286ce96bda44d97882f9fc
             Collider2D[] results = Physics2D.OverlapCircleAll(GetComponent<Transform>().position, radius);
             Debug.Log(results[0].gameObject.name);
             foreach (Collider2D collider in results)
