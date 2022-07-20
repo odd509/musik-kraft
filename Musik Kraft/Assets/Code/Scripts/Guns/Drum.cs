@@ -28,6 +28,7 @@ public class Drum : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && canShoot)
         {
+
             camera.GetComponent<Shake>().ShakeCamera();
 
             StartCoroutine(DamageEffect());
