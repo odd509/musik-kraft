@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592265653}
-  - component: {fileID: 592265652}
+  - component: {fileID: 592265654}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -207,19 +207,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &592265652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592265651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd409c21ced492468906fac9809bccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
 --- !u!4 &592265653
 Transform:
   m_ObjectHideFlags: 0
@@ -235,6 +222,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592265654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592265651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9874a341bb586428d0dc58fe7631db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn: {fileID: 1464618355}
+  coolDown: 2
+  startRaid: 0
 --- !u!1 &596035837
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +613,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.23}
   m_EdgeRadius: 0
+--- !u!1 &1464618355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+  m_PrefabInstance: {fileID: 3943555339036574269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1695632318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -689,11 +696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c87fa6e32e3e154e957504def5a0ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drum: {fileID: 0}
-  guitar: {fileID: 0}
-  shoot1: {fileID: 0}
-  bombe: {fileID: 0}
-  coolDownArray: 
 --- !u!1001 &1845745597
 PrefabInstance:
   m_ObjectHideFlags: 0
