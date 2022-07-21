@@ -176,7 +176,8 @@ public class Movement : MonoBehaviour
 
     void FallDetection()
     {
-        if (rb.velocity.y < 0 )
+        
+        if (rb.velocity.y < 0 && !isGrounded)
         {
             animator.SetBool("isFalling", true);
             rb.gravityScale = Input.GetKey(KeyCode.DownArrow) ? fallMultiplier * 1.3f : fallMultiplier;
