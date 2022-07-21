@@ -33,8 +33,8 @@ public class EnemyStats : MonoBehaviour
     }
 
     public void TakeDamage(float damage) {
-        healthBar.setHealth(health,maxHealth);
         health -= damage;
+        healthBar.setHealth(health,maxHealth);
         if (health <= 0f)
         {
             Destroy(gameObject);

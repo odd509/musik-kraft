@@ -24,8 +24,9 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        healthBar.setHealth(health,maxHealth);
         health -= damage;
+        healthBar.setHealth(health,maxHealth);
+        
         StartCoroutine(Invulnerability());
         if (health <= 0f)
         {
