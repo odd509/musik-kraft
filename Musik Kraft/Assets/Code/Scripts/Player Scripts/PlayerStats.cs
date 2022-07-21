@@ -30,7 +30,7 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(Invulnerability());
         if (health <= 0f)
         {
-            Destroy(gameObject);
+            Dead();
         }
     }
     public void Heal(float heal)
@@ -49,5 +49,9 @@ public class PlayerStats : MonoBehaviour
             yield return new WaitForSeconds(invulnerabilityDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(3,9,false);
+    }
+
+    public void Dead() {
+        Destroy(gameObject);
     }
 }
