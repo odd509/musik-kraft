@@ -13,6 +13,7 @@ public class Drum : MonoBehaviour
     public float knockbackForce = 2f;
     public float radius = 10f;
 
+    public GameObject soundManager;
     
 
     bool keyPressed = false;
@@ -24,7 +25,8 @@ public class Drum : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && canShoot)
         {
             GetComponent<Shake>().ShakeCamera();
-
+            soundManager.GetComponent<SoundPlayer>().Drum();
+            
             StartCoroutine(DamageEffect());
             canShoot = false;
             StartCoroutine(shootTimer());
