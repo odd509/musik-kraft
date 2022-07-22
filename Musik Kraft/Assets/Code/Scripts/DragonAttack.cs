@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class DragonAttack : MonoBehaviour
 {
-    [SerializeField] public GameObject projectile;
-    
+    public GameObject projectile;
+    public GameObject player;
+
+    public float groundAttackDistance = 5f;
+    public float groundAttackDamage = 40f;
     public float attackTimer = 3f;
     public float flySpeed = 1f;
     public float fallSpeed = 1f;
@@ -61,6 +64,7 @@ public class DragonAttack : MonoBehaviour
         //shake zart zort
         GetComponent<Shake>().ShakeCamera();
         StartCoroutine(AreaEffect());
+        GroundAttack();
         
         yield return new WaitForSeconds(1f);
         
@@ -111,5 +115,17 @@ public class DragonAttack : MonoBehaviour
             angle += angleStep;
         }
     }
-    
+
+    public void GroundAttack()
+    {
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+        if (distance <= groundAttackDistance)
+        {
+            player.GetComponent<PlayerStats>().TakeDamage(groundAttackDamage);
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, groundAttackDistance);
+    }
 }
