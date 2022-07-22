@@ -13,9 +13,12 @@ public class GuitarWeapon : MonoBehaviour
     private bool canShoot = true;
     public float cooldown;
 
+    private SpriteRenderer sprite;
+    
     private void Awake()
     {
         firePointFront = transform.Find("FirePointFront");
+        sprite = transform.Find("Instruments").transform.Find("guitar").GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -30,6 +33,7 @@ public class GuitarWeapon : MonoBehaviour
 
     void Shoot()
     {
+        StartCoroutine(spriteToggle());
         Vector2 projectileVector;
         var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 
         
@@ -61,5 +65,13 @@ public class GuitarWeapon : MonoBehaviour
     IEnumerator shootTimer(){
         yield return new WaitForSeconds(cooldown);
         canShoot = true;
+    }
+    
+    IEnumerator spriteToggle()
+    {
+        sprite.enabled = true;
+        yield return new WaitForSeconds(1);
+        sprite.enabled = false;
+
     }
 }

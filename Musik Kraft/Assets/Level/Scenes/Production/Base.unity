@@ -742,10 +742,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5090504190886290736, guid: 332839c1c79089f4a9321b749983d877, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332839c1c79089f4a9321b749983d877, type: 3}
 --- !u!1 &1024710701
@@ -2740,21 +2736,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 59104404, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: speed
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 59104404, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1677296554}
-    - target: {fileID: 59104405, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: detailedGizmos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1381022427475992565, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760016, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2802,18 +2786,6 @@ PrefabInstance:
     - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_Name
       value: frog-idle-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943555338606760023, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: m_LinearDrag
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943555338606760023, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
@@ -3083,14 +3055,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1091029001, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
-      propertyPath: damage
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091029001, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
-      propertyPath: knockbackForce
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 1091029011, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
       propertyPath: camera
       value: 
@@ -3203,10 +3167,6 @@ PrefabInstance:
     - target: {fileID: 8085026135554977797, guid: 61d8fa611f3d9bd498f8410b2e144ab8, type: 3}
       propertyPath: m_Name
       value: UcanAdam
-      objectReference: {fileID: 0}
-    - target: {fileID: 8085026135554977797, guid: 61d8fa611f3d9bd498f8410b2e144ab8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d8fa611f3d9bd498f8410b2e144ab8, type: 3}

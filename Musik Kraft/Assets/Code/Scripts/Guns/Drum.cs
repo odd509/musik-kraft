@@ -14,16 +14,22 @@ public class Drum : MonoBehaviour
     public float radius = 10f;
 
     public GameObject soundManager;
-    
+    private SpriteRenderer sprite;
 
     bool keyPressed = false;
     bool canShoot = true;
     public float cooldown;
 
+    public void Awake()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && canShoot)
         {
+            StartCoroutine(spriteToggle());
             GetComponent<Shake>().ShakeCamera();
             soundManager.GetComponent<SoundPlayer>().Drum();
             
@@ -66,5 +72,13 @@ public class Drum : MonoBehaviour
     IEnumerator shootTimer(){
         yield return new WaitForSeconds(cooldown);
         canShoot = true;
+    }
+    
+    IEnumerator spriteToggle()
+    {
+        sprite.enabled = true;
+        yield return new WaitForSeconds(1);
+        sprite.enabled = false;
+
     }
 }

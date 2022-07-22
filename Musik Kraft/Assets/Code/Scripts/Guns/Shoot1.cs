@@ -14,11 +14,14 @@ public class Shoot1 : MonoBehaviour
     private bool canShoot = true;
     public float cooldown;
 
+    private SpriteRenderer sprite;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         radius = 5f;
         movespeed = 15f;
+        sprite = transform.Find("Instruments").transform.Find("acordion").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class Shoot1 : MonoBehaviour
             canShoot = false;
             startPoint = player.transform.position;
             SpawnProjectiles (numberOfProjectiles);
+            StartCoroutine(spriteToggle());
             StartCoroutine(shootTimer());
         }
     }
@@ -54,4 +58,11 @@ public class Shoot1 : MonoBehaviour
         canShoot = true;
     }
     
+    IEnumerator spriteToggle()
+    {
+        sprite.enabled = true;
+        yield return new WaitForSeconds(1);
+        sprite.enabled = false;
+
+    }
 }
