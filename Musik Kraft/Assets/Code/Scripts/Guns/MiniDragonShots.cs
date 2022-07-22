@@ -27,7 +27,7 @@ public class MiniDragonShots : MonoBehaviour
     }
     IEnumerator DestroyProjectile()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }

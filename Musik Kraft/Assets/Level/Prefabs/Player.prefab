@@ -49,12 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageSprite: {fileID: 4835336298801148185}
   effectDuration: 0.2
-  groundDamage: 40
+  groundDamage: 20
   areaDamage: 15
-  knockbackForce: 5
+  knockbackForce: 30
   radius: 5
   soundManager: {fileID: 2936342323656039933}
-  cooldown: 0
+  cooldown: 3
 --- !u!114 &2086284569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,8 +740,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.523
+  m_PlayOnAwake: 0
+  m_Volume: 0.345
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -841,6 +841,14 @@ MonoBehaviour:
   drum1: {fileID: 8300000, guid: 2b38bcdb18c14794483bb4c4e5d3c374, type: 3}
   drum2: {fileID: 8300000, guid: 8aad498b89acce442bc8f998f5880bf4, type: 3}
   drum3: {fileID: 8300000, guid: 6fae3fdbf9926734a98685f2df067979, type: 3}
+  accordion1: {fileID: 8300000, guid: 78d6b5cc6243fc54c8c21f47627037b1, type: 3}
+  sax1: {fileID: 8300000, guid: 02ba82b30389bcc4a9d89fb2f218d5f7, type: 3}
+  sax2: {fileID: 8300000, guid: 7d01ed51bd3069240bba8a694d8ab37c, type: 3}
+<<<<<<< Updated upstream
+  guitar1: {fileID: 8300000, guid: 1136f0fab7a640b4d92c16c5e628d50e, type: 3}
+=======
+  guitar1: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &3346992218336455012
 GameObject:
   m_ObjectHideFlags: 0

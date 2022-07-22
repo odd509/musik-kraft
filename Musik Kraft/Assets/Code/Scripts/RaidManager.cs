@@ -7,12 +7,13 @@ public class RaidManager : MonoBehaviour
     
     public GameObject spawn;
     public float coolDown;
-    public bool startRaid = false;
+    private bool startRaid = false;
     private bool spawnAvailable = true;
+    public float startTime, endTime;
 
-    void Update(){
+    void Awake(){
         
-        startEnemy();
+        StartCoroutine(spawnTimes());
     }
     void startEnemy(){
         if(startRaid && spawnAvailable){
@@ -27,7 +28,18 @@ public class RaidManager : MonoBehaviour
 
     void Spawn(){
 
-        Instantiate(spawn, transform.position, Quaternion.identity);
+        GameObject copy = Instantiate(spawn, transform.position, Quaternion.identity);
+        copy.SetActive(true);
+
+    }
+    IEnumerator spawnTimes(){
+        yield return new WaitForSeconds(startTime);
+        startRaid = true;
+        startEnemy();
+        yield return new WaitForSeconds(endTime - startTime);
+        startRaid = false;
+        startEnemy();
+        
 
     }
     

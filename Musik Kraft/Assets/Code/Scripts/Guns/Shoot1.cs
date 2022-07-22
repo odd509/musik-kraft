@@ -7,7 +7,8 @@ public class Shoot1 : MonoBehaviour
     [SerializeField] public int numberOfProjectiles;
 
     [SerializeField] public GameObject projectile;
-
+    private GameObject soundManager;
+    
     private Vector2 startPoint;
     public GameObject player;
     private float radius, movespeed;
@@ -22,6 +23,7 @@ public class Shoot1 : MonoBehaviour
         radius = 5f;
         movespeed = 15f;
         sprite = transform.Find("Instruments").transform.Find("acordion").GetComponent<SpriteRenderer>();
+        soundManager = transform.Find("SoundManager").gameObject;
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Shoot1 : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q) && canShoot){
             canShoot = false;
             startPoint = player.transform.position;
+            soundManager.GetComponent<SoundPlayer>().Accordion();
             SpawnProjectiles (numberOfProjectiles);
             StartCoroutine(spriteToggle());
             StartCoroutine(shootTimer());

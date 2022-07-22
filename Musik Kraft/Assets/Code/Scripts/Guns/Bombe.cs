@@ -14,12 +14,14 @@ public class Bombe : MonoBehaviour
     public float cooldown;
 
     private SpriteRenderer sprite;
-    
+    private GameObject soundManager;
 
     private void Awake()
     {
         firePointFront = transform.Find("FirePointFront");
         sprite = transform.Find("Instruments").transform.Find("sax").GetComponent<SpriteRenderer>();
+        soundManager = transform.Find("SoundManager").gameObject;
+
     }
     
     void Update()
@@ -36,6 +38,7 @@ public class Bombe : MonoBehaviour
     {
         StartCoroutine(spriteToggle());
         Vector2 projectileVector;
+        soundManager.GetComponent<SoundPlayer>().Sax();
         var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 
 
         if ((Input.GetKey(KeyCode.UpArrow)))
