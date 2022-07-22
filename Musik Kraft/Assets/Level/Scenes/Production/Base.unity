@@ -2748,6 +2748,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1677296554}
+    - target: {fileID: 1381022427475992565, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3943555338606760016, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2795,6 +2799,10 @@ PrefabInstance:
     - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
       propertyPath: m_Name
       value: frog-idle-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943555338606760020, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f386a88f066a2a4696765051f1c7838, type: 3}
@@ -3068,14 +3076,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1374562915}
-    - target: {fileID: 1091029003, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
-      propertyPath: groundAttackDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1091029011, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1474892873}
+    - target: {fileID: 2483343945123458632, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2483343945123458634, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
       propertyPath: m_Name
       value: zejder
@@ -3126,6 +3134,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2483343945123458639, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8423974114871881926, guid: 59ff216609d8c644fb3bf4709eaeb251, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
