@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 0}
-  coolDown: 0
+  coolDown: 2
 --- !u!1 &168897303
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 0}
-  coolDown: 0
+  coolDown: 2
 --- !u!1 &621496001
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 0}
-  coolDown: 0
+  coolDown: 2
 --- !u!1 &902340145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 0}
-  coolDown: 0
+  coolDown: 2
 --- !u!1 &1374562915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1499053274311077843, guid: 332839c1c79089f4a9321b749983d877, type: 3}
@@ -3240,6 +3240,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3443359170466532084, guid: 61d8fa611f3d9bd498f8410b2e144ab8, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1677296554}
     - target: {fileID: 8085026135554977793, guid: 61d8fa611f3d9bd498f8410b2e144ab8, type: 3}
       propertyPath: m_RootOrder
       value: 3
