@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class GuitarWeapon : MonoBehaviour
@@ -15,6 +16,7 @@ public class GuitarWeapon : MonoBehaviour
 
     private SpriteRenderer sprite;
     private GameObject soundManager;
+    private bool canFx = true;
     
     private void Awake()
     {
@@ -29,16 +31,31 @@ public class GuitarWeapon : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) && canShoot)
         {
+            sprite.enabled = true;
+
+            if (canFx)
+            {
+                canFx = false;
+                soundManager.GetComponent<SoundPlayer>().Guitar();
+                StartCoroutine(FxTimer());
+            }
+            
+            
+            
             Shoot();
             canShoot= false;
             StartCoroutine(shootTimer());
         }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            sprite.enabled = false;
+        }
+        
     }
 
     void Shoot()
     {
-        soundManager.GetComponent<SoundPlayer>().Guitar();
-        StartCoroutine(spriteToggle());
         Vector2 projectileVector;
         var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 
         
@@ -78,5 +95,11 @@ public class GuitarWeapon : MonoBehaviour
         yield return new WaitForSeconds(1);
         sprite.enabled = false;
 
+    }
+
+    IEnumerator FxTimer()
+    {
+        yield return new WaitForSeconds(.35f);
+        canFx = true;
     }
 }
