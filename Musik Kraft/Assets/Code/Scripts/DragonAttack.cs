@@ -8,6 +8,7 @@ public class DragonAttack : MonoBehaviour
     public GameObject projectile;
     public GameObject player;
 
+    [Header("Ground Attack")]
     public float groundAttackDistance = 5f;
     public float groundAttackDamage = 40f;
     public float attackTimer = 3f;

@@ -7,8 +7,11 @@ public class BombeProj : MonoBehaviour
     public float damage;
     public float thrust;
     public float splashRange;
-    
-    private void OnTriggerEnter2D(Collider2D collusion){
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collusion = collision.gameObject;
+
         if (splashRange > 0){
             var hitColliders = Physics2D.OverlapCircleAll(transform.position, splashRange);
             foreach (var hitCollider in hitColliders){

@@ -9,15 +9,19 @@ public class Shoot1Projectile : MonoBehaviour
     void Awake(){
         StartCoroutine(DestroyProjectile());
     }
-    private void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.CompareTag("Enemy")){
-            Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
-            if (enemy != null) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject other = collision.gameObject;
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Rigidbody2D enemyRB = other.GetComponent<Rigidbody2D>();
+            if (enemyRB != null)
+            {
                 EnemyStats kill = other.GetComponent<EnemyStats>();
                 kill.TakeDamage(damage);
-                Vector2 difference = (enemy.transform.position - transform.position).normalized;
+                Vector2 difference = (enemyRB.transform.position - transform.position).normalized;
                 difference = difference.normalized * thrust;
-                enemy.AddForce(difference, ForceMode2D.Impulse);
+                enemyRB.AddForce(difference, ForceMode2D.Impulse);
             }
             Destroy(gameObject);
         }

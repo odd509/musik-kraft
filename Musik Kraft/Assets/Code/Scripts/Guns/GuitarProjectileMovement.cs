@@ -14,8 +14,9 @@ public class GuitarProjectileMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = velocityVector;
     }
-    private void OnTriggerEnter2D(Collider2D collider){
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         Destroy(gameObject);
     }
-    
+
 }

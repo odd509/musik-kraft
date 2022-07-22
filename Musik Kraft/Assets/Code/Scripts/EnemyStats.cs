@@ -20,15 +20,17 @@ public class EnemyStats : MonoBehaviour
         health = maxHealth;
         healthBar.setHealth(health,maxHealth);
     }
-    
 
-    void OnTriggerEnter2D(Collider2D collider){
-        if (collider.gameObject.tag == "Player"){
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collider = collision.gameObject;
+        if (collider.gameObject.tag == "Player")
+        {
             collider.GetComponent<PlayerStats>().TakeDamage(damage);
             Rigidbody2D playerRigid = collider.GetComponent<Rigidbody2D>();
             Vector2 difference = (playerRigid.transform.position - transform.position).normalized;
             difference = difference.normalized * knockbackForce;
-            playerRigid.AddForce(difference,ForceMode2D.Impulse);
+            playerRigid.AddForce(difference, ForceMode2D.Impulse);
         }
     }
 

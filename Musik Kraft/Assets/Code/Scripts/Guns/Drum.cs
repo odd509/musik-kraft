@@ -43,7 +43,6 @@ public class Drum : MonoBehaviour
             {
                 if (collider.gameObject.tag == "Enemy")
                 {
-                    Debug.Log("Enemy");
                     GameObject enemy = collider.gameObject;
 
                     enemy.GetComponent<EnemyStats>().TakeDamage(groundDamage);
