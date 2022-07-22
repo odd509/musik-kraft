@@ -5,15 +5,16 @@ using UnityEngine;
 public class RaidManagerMonarch : MonoBehaviour
 {
     [Header("Enemies")]
-    public GameObject frog;
-    public GameObject eagle;
+    public GameObject frogTemp;
+    public GameObject eagleTemp;
+    // Gerçek Ejderhayý koyun
     public GameObject dragon;
 
     [Header("Spawners")]
-    public RaidManager SpawnerTopLeft;
-    public RaidManager SpawnerTopRight;
-    public RaidManager SpawnerBottomLeft;
-    public RaidManager SpawnerBottomRight;
+    public Spawner SpawnerTopLeft;
+    public Spawner SpawnerTopRight;
+    public Spawner SpawnerBottomLeft;
+    public Spawner SpawnerBottomRight;
 
     [Header("Raid Types")]
 
@@ -24,25 +25,44 @@ public class RaidManagerMonarch : MonoBehaviour
 
     [Header("Raid 2")]
     public bool isActiveRaid2 = true;
-    public float startTimeRaid2 = 0f;
+    public float startTimeRaid2 = 10f;
     public float durationRaid2 = 10f;
 
     [Header("Raid 3")]
     public bool isActiveRaid3 = true;
-    public float startTimeRaid3 = 0f;
+    public float startTimeRaid3 = 20f;
     public float durationRaid3 = 10f;
 
     private void Awake()
     {
-        if (isActiveRaid1) Raid1();
+        if (isActiveRaid1) Raid1(startTimeRaid1, durationRaid1);
+        if (isActiveRaid2) Raid2(startTimeRaid2, durationRaid2);
+        if (isActiveRaid3) Raid3(startTimeRaid3, durationRaid3);
     }
 
-    void Raid1() {
-        SpawnerBottomLeft.spawn = frog;
-        SpawnerBottomLeft.startRaid = true;
+    void Raid1(float startTime, float duration) {
+        SpawnerBottomLeft.spawn = frogTemp;
+        SpawnerBottomLeft.StartRaid(startTime, duration);
 
+        SpawnerBottomRight.spawn = frogTemp;
+        SpawnerBottomLeft.StartRaid(startTime, duration);
     }
-    void Raid2() { }
-    void Raid3() { }
+    void Raid2(float startTime, float duration) {
+        Raid1(startTime, duration);
 
+        SpawnerTopLeft.spawn = eagleTemp;
+        SpawnerTopLeft.StartRaid(startTime, duration);
+
+        SpawnerTopRight.spawn = eagleTemp;
+        SpawnerTopRight.StartRaid(startTime, duration);
+    }
+    void Raid3(float startTime, float duration) {
+        StartCoroutine(Dragon(startTime));
+        
+    }
+    IEnumerator Dragon(float startTime)
+    {
+        yield return new WaitForSeconds(startTime);
+        dragon.SetActive(true);
+    }
 }

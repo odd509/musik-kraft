@@ -8,7 +8,8 @@ public class RaidManager : MonoBehaviour
     public GameObject spawn;
     public float coolDown;
     public bool startRaid = false;
-    public float startTime, endTime;
+    public float startTime;
+    public float duration;
 
     private bool spawnAvailable = true;
 
@@ -37,7 +38,7 @@ public class RaidManager : MonoBehaviour
         yield return new WaitForSeconds(startTime);
         startRaid = true;
         startEnemy();
-        yield return new WaitForSeconds(endTime - startTime);
+        yield return new WaitForSeconds(duration);
         startRaid = false;
         startEnemy();
         
