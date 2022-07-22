@@ -7,9 +7,10 @@ public class RaidManager : MonoBehaviour
     
     public GameObject spawn;
     public float coolDown;
-    private bool startRaid = false;
-    private bool spawnAvailable = true;
+    public bool startRaid = false;
     public float startTime, endTime;
+
+    private bool spawnAvailable = true;
 
     void Awake(){
         

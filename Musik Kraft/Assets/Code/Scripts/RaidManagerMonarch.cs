@@ -35,7 +35,6 @@ public class RaidManagerMonarch : MonoBehaviour
     private void Awake()
     {
         if (isActiveRaid1) Raid1();
-        else durationRaid1 = 0;
     }
 
     void Raid1() {
