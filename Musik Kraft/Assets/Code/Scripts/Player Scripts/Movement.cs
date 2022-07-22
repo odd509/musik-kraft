@@ -45,6 +45,8 @@ public class Movement : MonoBehaviour
         animator = GetComponent<Animator>();
         stats = GetComponent<PlayerStats>();
         dashTime = startDashTime;
+        Physics2D.IgnoreLayerCollision(3,9,false);
+
     }
 
     // Update is called once per frame
@@ -203,6 +205,7 @@ public class Movement : MonoBehaviour
     {
         rb.AddForce(dir * dashSpeed, ForceMode2D.Impulse);
         StartCoroutine(invincibleTime());
+        StartCoroutine(DashFlick());
         dashTime = startDashTime;
         canDash = false;
 
@@ -212,6 +215,18 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Physics2D.IgnoreLayerCollision(3,9,false);
         
+    }
+
+    IEnumerator DashFlick()
+    {
+        Color oldColor = GetComponent<SpriteRenderer>().color;
+        for (int i = 0; i < 5; i++)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.2f);
+            yield return new WaitForSeconds(0.05f);
+            GetComponent<SpriteRenderer>().color = new Color(oldColor.r, oldColor.g, oldColor.b, 1f);
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
 

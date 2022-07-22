@@ -73,10 +73,10 @@ public class DragonAttack : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.up * flySpeed;
         _animator.SetTrigger("Fly");
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 15; i++)
         {
             SpawnProjectiles(7);
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
         }
         
         

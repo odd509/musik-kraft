@@ -14,11 +14,15 @@ public class GuitarWeapon : MonoBehaviour
     public float cooldown;
 
     private SpriteRenderer sprite;
+    private GameObject soundManager;
     
     private void Awake()
     {
         firePointFront = transform.Find("FirePointFront");
         sprite = transform.Find("Instruments").transform.Find("guitar").GetComponent<SpriteRenderer>();
+        soundManager = transform.Find("SoundManager").gameObject;
+
+        
     }
 
     void Update()
@@ -33,6 +37,7 @@ public class GuitarWeapon : MonoBehaviour
 
     void Shoot()
     {
+        soundManager.GetComponent<SoundPlayer>().Guitar();
         StartCoroutine(spriteToggle());
         Vector2 projectileVector;
         var proj = Instantiate(bullet, firePointFront.position, Quaternion.identity); 

@@ -412,7 +412,7 @@ MonoBehaviour:
   damage: 40
   knockbackForce: 15
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2906294049196379713}
 --- !u!114 &1091029002
 MonoBehaviour:
   m_ObjectHideFlags: 0
