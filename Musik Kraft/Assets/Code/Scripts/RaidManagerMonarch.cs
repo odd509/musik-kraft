@@ -45,7 +45,7 @@ public class RaidManagerMonarch : MonoBehaviour
         SpawnerBottomLeft.StartRaid(startTime, duration);
 
         SpawnerBottomRight.spawn = frogTemp;
-        SpawnerBottomLeft.StartRaid(startTime, duration);
+        SpawnerBottomRight.StartRaid(startTime, duration);
     }
     void Raid2(float startTime, float duration) {
         Raid1(startTime, duration);
