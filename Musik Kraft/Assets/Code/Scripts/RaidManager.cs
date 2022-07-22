@@ -9,10 +9,11 @@ public class RaidManager : MonoBehaviour
     public float coolDown;
     public bool startRaid = false;
     private bool spawnAvailable = true;
+    public float startTime, endTime;
 
     void Update(){
         
-        startEnemy();
+        StartCoroutine(spawnTimes());
     }
     void startEnemy(){
         if(startRaid && spawnAvailable){
@@ -28,6 +29,15 @@ public class RaidManager : MonoBehaviour
     void Spawn(){
 
         Instantiate(spawn, transform.position, Quaternion.identity);
+
+    }
+    IEnumerator spawnTimes(){
+        yield return new WaitForSeconds(startTime);
+        startRaid = true;
+        startEnemy();
+        yield return new WaitForSeconds(endTime - startTime);
+        startRaid = false;
+        
 
     }
     
