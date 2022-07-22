@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ece74e3f1ec1bb4bad9be881c0fab47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
-  thrust: 5
-  splashRange: 2
+  damage: 80
+  thrust: 3
+  splashRange: 4
