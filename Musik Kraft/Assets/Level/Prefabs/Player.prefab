@@ -621,7 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePointFront: {fileID: 1609037789478685399}
   bullet: {fileID: 992025472062646778, guid: d513c4b2ac8a9484288360d37e975190, type: 3}
-  projectileSpeed: 20
+  projectileSpeed: 15
   cooldown: 3
 --- !u!114 &1574332960553738690
 MonoBehaviour:
@@ -844,7 +844,7 @@ MonoBehaviour:
   accordion1: {fileID: 8300000, guid: 78d6b5cc6243fc54c8c21f47627037b1, type: 3}
   sax1: {fileID: 8300000, guid: 02ba82b30389bcc4a9d89fb2f218d5f7, type: 3}
   sax2: {fileID: 8300000, guid: 7d01ed51bd3069240bba8a694d8ab37c, type: 3}
-  guitar1: {fileID: 0}
+  guitar1: {fileID: 8300000, guid: 1136f0fab7a640b4d92c16c5e628d50e, type: 3}
 --- !u!1 &3346992218336455012
 GameObject:
   m_ObjectHideFlags: 0

@@ -411,7 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   knockbackForce: 15
-  maxHealth: 100
+  maxHealth: 500
   healthBar: {fileID: 2906294049196379713}
 --- !u!114 &1091029002
 MonoBehaviour:

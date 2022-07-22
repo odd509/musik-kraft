@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d807f7c26a3e03e46ba4c33c702cdc20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 4
-  damage: 10
+  thrust: -5
+  damage: 15
 --- !u!1 &7338247007244871931
 GameObject:
   m_ObjectHideFlags: 0
